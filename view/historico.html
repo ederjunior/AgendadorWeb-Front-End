@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style rel="stylesheet" type="text/css">
+
+        .table1 { width:1500px; height:450px; overflow:auto;}
+
+    </style>
+</head>
+<body>
+<h1>Histórico de Agendamentos</h1>
+<br>
+
+<div class="table1">
+    <table class="table">
+        <thead >
+        <tr>
+            <th>
+                <label>ID</label>
+            </th>
+            <th>
+                <label>DATA</label>
+            </th>
+            <th>
+                <label>HORA</label>
+            </th>
+            <th>
+                <label>STATUS</label>
+            </th>
+            <th>
+                <label>VENTILADOR</label>
+            </th>
+            <th>
+                <label>LUZ DA SALA</label>
+            </th>
+            <th>
+                <label>TV</label>
+            </th>
+            <th>
+                <label>LUZ DO QUARTO</label>
+            </th>
+        </tr>
+        </thead>
+
+        <tbody ng-repeat="agenda in listaAgenda">
+        <tr>
+            <td>{{agenda.id}}</td>
+            <td>{{agenda.dataHora | date:"dd/MM/yyyy"}}</td>
+            <td>{{agenda.dataHora | date:"HH:mm"}}</td>
+            <td>{{agenda.status}}</td>
+            <td>{{agenda.ventilador}}</td>
+            <td>{{agenda.luzDaSala}}</td>
+            <td>{{agenda.tv}}</td>
+            <td>{{agenda.luzDoQuarto}}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>

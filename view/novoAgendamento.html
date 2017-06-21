@@ -1,0 +1,110 @@
+<div class="container-fluid" align="center">
+    <div class="page-header">
+        <style rel="stylesheet" type="text/css">
+
+            .table { width: 50%;}
+            .row {margin: auto; width: 50%;}
+        </style>
+
+        <h1>Novo Agendamento</h1>
+
+        <br>
+
+        <div class="alert alert-danger" ng-show="aparecerAlert">Escolha uma opção para {{nomeAlert}}</div>
+
+        <br>
+
+        <div>
+            <label>Data e Hora: </label>
+            <div class="row">
+                    <div class="form-group">
+                        <div class='input-group date' id='datetimepicker1' >
+                            <input type='text' class="form-control"/>
+                    <span class="input-group-addon" >
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                        </div>
+                </div>
+            </div>
+        </div>
+
+        <br>
+        <table class="table">
+            <tr>
+                <td>Ventilador: </td>
+                <td><label><input type="radio" value="true" ng-model="agenda.ventilador">Ligado</label></td>
+                <td><label><input type="radio" value="false" ng-model="agenda.ventilador">Desligado</label></td>
+            </tr>
+
+            <tr>
+                <td>Luz da Sala: </td>
+                <td><label><input type="radio" value="true" ng-model="agenda.luzDaSala">Ligado</label></td>
+                <td><label><input type="radio" value="false" ng-model="agenda.luzDaSala">Desligado</label></td>
+            </tr>
+
+            <tr>
+                <td>TV: </td>
+                <td><label><input type="radio" value="true" ng-model="agenda.tv">Ligado</label></td>
+                <td><label><input type="radio" value="false" ng-model="agenda.tv">Desligado</label></td>
+            </tr>
+
+            <tr>
+                <td>Luz do Quarto: </td>
+                <td><label><input type="radio" value="true" ng-model="agenda.luzDoQuarto">Ligado</label></td>
+                <td><label><input type="radio" value="false" ng-model="agenda.luzDoQuarto">Desligado</label></td>
+            </tr>
+
+        </table>
+        <br>
+        <button class="btn btn-lg btn-primary" ng-click="agendar(agenda)">
+            <span class="glyphicon glyphicon-plus"></span>
+            Agendar
+        </button>
+
+    </div>
+
+<!-- Modal Confirmação Inserção -------------------------------------------------------------------------------------------------->
+
+    <div class="modal fade" id="modalConfirmInsert" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header" style="padding:35px 50px;">
+                    <button type="button" class="close" data-dismiss="modal" ng-click="irPara('/agendamentos')">&times;</button>
+                    <h3>Inserido com sucesso!!!</h3>
+                </div>
+                <div class="modal-body" style="padding:40px 50px;">
+                    <div align="center">
+                        <button class="btn btn-success btn-lg" data-dismiss="modal" ng-click="irPara('/agendamentos')">
+                            <span class="glyphicon glyphicon-ok"></span> Ok </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Erro Inserção -------------------------------------------------------------------------------------------------->
+
+    <div class="modal fade" id="modalErrInsert" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header" style="padding:35px 50px;">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h3>Escolha uma data ou hora maior que a atual!</h3>
+                </div>
+                <div class="modal-body" style="padding:40px 50px;">
+                    <div align="center">
+                        <button class="btn btn-success btn-lg" data-dismiss="modal">
+                            <span class="glyphicon glyphicon-ok"></span> Ok </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+</div>
+
+
+
+
